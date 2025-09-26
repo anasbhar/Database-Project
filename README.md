@@ -1,2 +1,3 @@
 # COMP353
-COMP 353
+
+Read the finalproject.pdf file - Contains SQL logic and implementation
