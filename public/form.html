@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <title> Form </title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <header>
+      <h1> Montreal Volleyball Club </h1>
+    </header>
+
+    <form id="form1">
+      <label>
+        Type in your SQL query:
+        <input type="text" name="userSQL">
+      </label>
+      <input type="submit" value="Submit Query">
+    </form>
+
+    <div id="div1"> The Response for the Custom SQL query will appear here! </div>
+
+    <br/>
+
+	<div class="dropdown-container">
+	      <!-- Locations -->
+	      <div class="dropdown-box">
+	        <h2> Locations (Q1) </h2>
+	        <label>
+	          Action:
+	          <select name="locationAction" class="dropdown-select">
+	            <option value=""> Select... </option>
+	            <option value="create"> Create </option>
+	            <option value="edit"> Edit </option>
+	            <option value="delete"> Delete </option>
+	            <option value="show"> Show All </option>
+	          </select>
+	        </label>
+
+	        <div class="dropdown-content" data-value="create">
+	          <form>
+	            <label>Street Address: <input type="text" name="locationAddress" required></label><br>
+	            <label>City: <input type="text" name="locationCity" required></label><br>
+	            <label>Province: <input type="text" name="locationProvince" required></label><br>
+	            <label>Postal Code: <input type="text" name="locationPostalCode" required></label><br>
+	            <label>Name: <input type="text" name="locationName" required></label><br>
+	            <label>Type (Head/Branch): <input type="text" name="locationType"></label><br>
+	            <label>Size: <input type="text" name="locationSize"></label><br>
+	            <label>Capacity: <input type="text" name="locationCapacity"></label><br>
+	            <label>Web Address: <input type="text" name="locationWebAddress"></label><br>
+	            <label>Phone: <input type="text" name="locationPhone"></label><br>
+	            <label>Extension: <input type="text" name="locationExtension"></label><br>
+	            <label>Phone Type: <input type="text" name="locationPhoneType"></label><br>
+	            <input type="submit" value="Create">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="edit">
+	          <form>
+	            <label>Location ID: <input type="text" name="editLocationID"></label>
+	            <br>
+	            <label>Street Address: <input type="text" name="editLocationAddress"></label><br>
+	            <label>City: <input type="text" name="editLocationCity"></label><br>
+	            <label>Province: <input type="text" name="editLocationProvince"></label><br>
+	            <label>Postal Code: <input type="text" name="editLocationPostalCode"></label><br>
+	            <label>Name: <input type="text" name="editLocationName"></label><br>
+	            <label>Type (Head/Branch): <input type="text" name="editLocationType"></label><br>
+	            <label>Size: <input type="text" name="editLocationSize"></label><br>
+	            <label>Capacity: <input type="text" name="editLocationCapacity"></label><br>
+              <label>Web Address: <input type="text" name="editLocationWebAddress"></label><br>
+	            <label>Active Status (0 or 1): <input type="text" name="editLocationIsActive"></label><br>
+              <label>Phone: <input type="text" name="editLocationPhone"></label><br>
+	            <label>Extension: <input type="text" name="editLocationExtension"></label><br>
+	            <label>Phone Type: <input type="text" name="editLocationPhoneType"></label><br>
+	            <input type="submit" value="Save">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="delete">
+	          <form>
+              <label> Location ID: <input type="text" name="deleteLocationID"></label><br>
+	            <input type="submit" value="Delete">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="show">
+            <form>
+              <input type="submit" value="Show All Locations">
+            </form>
+	        </div>
+	      </div>
+
+	      <!-- Personnel -->
+	      <div class="dropdown-box">
+	        <h2> Personnel (Q2) </h2>
+
+          <datalist id="branchRoles">
+            <option value="General Manager">
+            <option value="Deputy Manager">
+            <option value="Treasurer">
+            <option value="Secretary">
+            <option value="Administrator">
+            <option value="Captain">
+            <option value="Coach">
+            <option value="Assistant Coach">
+            <option value="Other">
+          </datalist>
+
+	        <label>
+	          Action:
+	          <select name="personnelAction" class="dropdown-select">
+	            <option value=""> Select... </option>
+	            <option value="create"> Create </option>
+	            <option value="edit"> Edit </option>
+	            <option value="delete"> Delete </option>
+	            <option value="show"> Show All </option>
+	          </select>
+	        </label>
+
+	        <div class="dropdown-content" data-value="create">
+	          <form>
+	            <h3>Personal Info</h3>
+	            <label>First Name: <input type="text" name="personnelFirstName"></label><br>
+	            <label>Last Name: <input type="text" name="personnelLastName"></label><br>
+	            <label>Middle Initial: <input type="text" name="personnelMiddleInitial"></label><br>
+	            <label>Date of Birth: <input type="date" name="personnelDOB"></label><br>
+	            <label>SSN: <input type="text" name="personnelSSN"></label><br>
+	            <label>Medicare: <input type="text" name="personnelMedicare"></label><br>
+	            <label>Email: <input type="text" name="personnelEmail"></label><br>
+	            
+	            <h3>Address</h3>
+	            <label>Street: <input type="text" name="personnelStreet"></label><br>
+	            <label>City: <input type="text" name="personnelCity"></label><br>
+	            <label>Province: <input type="text" name="personnelProvince"></label><br>
+	            <label>Postal Code: <input type="text" name="personnelPostalCode"></label><br>
+	            
+	            <h3>Phone</h3>
+	            <label>Number: <input type="text" name="personnelPhone"></label><br>
+	            <label>Extension: <input type="text" name="personnelExtension"></label><br>
+	            <label>Type: <input type="text" name="personnelPhoneType"></label><br>
+	            
+	            <h3>Assignment</h3>
+	            <label>Location ID: <input type="text" name="personnelLocationID"></label><br>
+	            <label>Role: <input type="text" name="personnelRole" list="branchRoles"></label><br>
+	            <label>Type (Volunteer/Salaried): <input type="text" name="personnelType"></label><br>
+	            <label>Start Date: <input type="date" name="personnelStartDate"></label><br>
+	            <label>End Date: <input type="date" name="personnelEndDate"></label><br>
+	            
+	            <input type="submit" value="Create">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="edit">
+	          <form>
+	            <label>Personnel Assignment ID: <input type="text" name="editPersonnelID"></label>
+	            <br>
+				      <label>First Name: <input type="text" name="editPersonnelFirstName"></label><br>
+	            <label>Last Name: <input type="text" name="editPersonnelLastName"></label><br>
+	            <label>Middle Initial: <input type="text" name="editPersonnelMiddleInitial"></label><br>
+	            <label>Date of Birth: <input type="date" name="editPersonnelDOB"></label><br>
+	            <label>SSN: <input type="text" name="editPersonnelSSN"></label><br>
+	            <label>Medicare: <input type="text" name="editPersonnelMedicare"></label><br>
+	            <label>Email: <input type="text" name="editPersonnelEmail"></label><br>
+	            
+	            <h3>Address</h3>
+	            <label>Street: <input type="text" name="editPersonnelStreet"></label><br>
+	            <label>City: <input type="text" name="editPersonnelCity"></label><br>
+	            <label>Province: <input type="text" name="editPersonnelProvince"></label><br>
+	            <label>Postal Code: <input type="text" name="editPersonnelPostalCode"></label><br>
+	            
+	            <h3>Phone</h3>
+	            <label>Number: <input type="text" name="editPersonnelPhone"></label><br>
+	            <label>Extension: <input type="text" name="editPersonnelExtension"></label><br>
+	            <label>Type: <input type="text" name="editPersonnelPhoneType"></label><br>
+	            
+	            <h3>Assignment</h3>
+	            <label>Location ID: <input type="text" name="editPersonnelLocationID"></label><br>
+	            <label>Role: <input type="text" name="editPersonnelRole" list="branchRoles"></label><br>
+	            <label>Type (Volunteer/Salaried): <input type="text" name="editPersonnelType"></label><br>
+	            <label>Start Date: <input type="date" name="editPersonnelStartDate"></label><br>
+	            <label>End Date: <input type="date" name="editPersonnelEndDate"></label><br>
+	            <input type="submit" value="Save">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="delete">
+	          <form>
+	            <label>Personnel ID: <input type="text" name="deletePersonnelID"></label><br>
+				      <input type="submit" value="Delete">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="show">
+            <form>
+              <input type="submit" value="Show All Personnel">
+            </form>
+	        </div>
+
+	      </div>
+
+	      <!-- Family Members -->
+	      <div class="dropdown-box">
+	        <h2> Family Members (Q3) </h2>
+	        <label>
+	          Action:
+	          <select name="familyAction" class="dropdown-select">
+	            <option value=""> Select... </option>
+	            <option value="create"> Create </option>
+	            <option value="edit"> Edit </option>
+	            <option value="delete"> Delete </option>
+	            <option value="show"> Show All </option>
+	          </select>
+	        </label>
+
+	        <div class="dropdown-content" data-value="create">
+	          <form>
+				      <h3>Relation Info</h3>
+	            <label>Minor ID: <input type="text" name="minorID"></label><br>
+	            <label>Major ID: <input type="text" name="majorID"></label><br>
+	            <label>Location ID: <input type="text" name="locationID"></label><br>
+	            <label>Relationship: <input type="date" name="relationship"></label><br>
+	            <label>Contact Role (Primary/Emergency): <input type="text" name="contactRole"></label><br>
+	            <input type="submit" value="Create">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="edit">
+	          <form>
+	            <label>Family Member ID: <input type="text" name="editFamilyID"></label>
+	            <br>
+				      <h3>Personal Info</h3>
+	            <label>First Name: <input type="text" name="editPersonnelFirstName"></label><br>
+	            <label>Last Name: <input type="text" name="editPersonnelLastName"></label><br>
+	            <label>Middle Initial: <input type="text" name="editPersonnelMiddleInitial"></label><br>
+	            <label>Date of Birth: <input type="date" name="editPersonnelDOB"></label><br>
+	            <label>SSN: <input type="text" name="editPersonnelSSN"></label><br>
+	            <label>Medicare: <input type="text" name="editPersonnelMedicare"></label><br>
+	            <label>Email: <input type="text" name="editPersonnelEmail"></label><br>
+	            
+	            <h3>Address</h3>
+	            <label>Street: <input type="text" name="editPersonnelStreet"></label><br>
+	            <label>City: <input type="text" name="editPersonnelCity"></label><br>
+	            <label>Province: <input type="text" name="editPersonnelProvince"></label><br>
+	            <label>Postal Code: <input type="text" name="editPersonnelPostalCode"></label><br>
+	            
+	            <h3>Phone</h3>
+	            <label>Number: <input type="text" name="editPersonnelPhone"></label><br>
+	            <label>Extension: <input type="text" name="editPersonnelExtension"></label><br>
+	            <label>Type: <input type="text" name="editPersonnelPhoneType"></label><br>
+	            <h3>Family Info</h3>
+	            <label>Location ID: <input type="text" name="editFamilyLocationID"></label><br>
+	            <input type="submit" value="Save">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="delete">
+	          <form>
+              <label>Family Member ID: <input type="text" name="deleteFamilyMemberID"></label><br>
+              <input type="submit" value="Delete">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="show">
+            <form>
+              <input type="submit" value="Show All Family Members">
+            </form>
+	        </div>
+
+	      </div>
+
+	      <!-- Club Members -->
+	      <div class="dropdown-box">
+	        <h2> Club Members (Q4) </h2>
+	        <label>
+	          Action:
+	          <select name="memberAction" class="dropdown-select">
+	            <option value=""> Select... </option>
+	            <option value="create"> Create </option>
+	            <option value="edit"> Edit </option>
+	            <option value="delete"> Delete </option>
+	            <option value="show"> Show All </option>
+	          </select>
+          </label>
+            <datalist id="relationshipType">
+              <option value="Father">
+              <option value="Mother">
+              <option value="Grandfather">
+              <option value="Grandmother">
+              <option value="Sibling">
+              <option value="Tutor">
+              <option value="Partner">
+              <option value="Friend">
+              <option value="Other">
+            </datalist>
+
+	        <div class="dropdown-content" data-value="create">
+	          <form>
+				      <h3>Personal Info</h3>
+	            <label>First Name: <input type="text" name="personnelFirstName"></label><br>
+	            <label>Last Name: <input type="text" name="personnelLastName"></label><br>
+	            <label>Middle Initial: <input type="text" name="personnelMiddleInitial"></label><br>
+	            <label>Date of Birth: <input type="date" name="personnelDOB"></label><br>
+	            <label>SSN: <input type="text" name="personnelSSN"></label><br>
+	            <label>Medicare: <input type="text" name="personnelMedicare"></label><br>
+	            <label>Email: <input type="text" name="personnelEmail"></label><br>
+	            
+	            <h3>Address</h3>
+	            <label>Street: <input type="text" name="personnelStreet"></label><br>
+	            <label>City: <input type="text" name="personnelCity"></label><br>
+	            <label>Province: <input type="text" name="personnelProvince"></label><br>
+	            <label>Postal Code: <input type="text" name="personnelPostalCode"></label><br>
+	            
+	            <h3>Phone</h3>
+	            <label>Number: <input type="text" name="personnelPhone"></label><br>
+	            <label>Extension: <input type="text" name="personnelExtension"></label><br>
+	            <label>Type: <input type="text" name="personnelPhoneType"></label><br>
+	            <h3>Member Info</h3>
+	            <label>Height: <input type="text" name="memberHeight"></label><br>
+	            <label>Weight: <input type="text" name="memberWeight"></label><br>
+	            <label>Gender: <input type="text" name="memberGender"></label><br>
+	            <label>Type (Major/Minor): <input type="text" name="memberType"></label><br>
+	            <label>Location ID: <input type="text" name="memberLocationID"></label><br>
+	            <label>Family Member ID: <input type="text" name="memberFamilyID"></label><br>
+	            <label>Relationship: <input type="text" name="memberRelationship" list="relationshipType"></label><br>
+	            <label>Contact Role (Primary/Emergency): <input type="text" name="memberContactRole"></label><br>
+	            <input type="submit" value="Create">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="edit">
+	          <form>
+	            <label>Member ID: <input type="text" name="editMemberID"></label>
+	            <br>
+				      <label>First Name: <input type="text" name="editPersonnelFirstName"></label><br>
+	            <label>Last Name: <input type="text" name="editPersonnelLastName"></label><br>
+	            <label>Middle Initial: <input type="text" name="editPersonnelMiddleInitial"></label><br>
+	            <label>Date of Birth: <input type="date" name="editPersonnelDOB"></label><br>
+	            <label>SSN: <input type="text" name="editPersonnelSSN"></label><br>
+	            <label>Medicare: <input type="text" name="editPersonnelMedicare"></label><br>
+	            <label>Email: <input type="text" name="editPersonnelEmail"></label><br>
+	            
+	            <h3>Address</h3>
+	            <label>Street: <input type="text" name="editPersonnelStreet"></label><br>
+	            <label>City: <input type="text" name="editPersonnelCity"></label><br>
+	            <label>Province: <input type="text" name="editPersonnelProvince"></label><br>
+	            <label>Postal Code: <input type="text" name="editPersonnelPostalCode"></label><br>
+	            
+	            <h3>Phone</h3>
+	            <label>Number: <input type="text" name="editPersonnelPhone"></label><br>
+	            <label>Extension: <input type="text" name="editPersonnelExtension"></label><br>
+	            <label>Type: <input type="text" name="editPersonnelPhoneType"></label><br>
+	            <h3>Member Info</h3>
+	            <label>Height: <input type="text" name="editMemberHeight"></label><br>
+	            <label>Weight: <input type="text" name="editMemberWeight"></label><br>
+	            <label>Gender: <input type="text" name="editMemberGender"></label><br>
+	            <label>Active Status (0 or 1): <input type="text" name="editMemberType"></label><br>
+	            <label>Location ID: <input type="text" name="editMemberLocationID"></label><br>
+	            <label>Family Member ID: <input type="text" name="editMemberFamilyID"></label><br>
+	            <label>Relationship: <input type="text" name="editMemberRelationship"></label><br>
+	            <label>Contact Role (Primary/Secondary/Emergency): <input type="text" name="editMemberContactRole"></label><br>
+	            <input type="submit" value="Save">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="delete">
+	          <form>
+	            <label>Member ID: <input type="text" name="deleteMemberID"></label><br>
+	            <input type="submit" value="Delete">
+	          </form>
+	        </div>
+
+	        <div class="dropdown-content" data-value="show">
+            <form>
+              <input type="submit" value="Show All Members">
+            </form>
+	        </div>
+	      </div>
+
+		  <!-- Team Formation -->
+		  <div class="dropdown-box">
+		    <h2> Team Formation (Q5 and Q6) </h2>
+		    <label>
+		      Action:
+		      <select name="teamAction" class="dropdown-select">
+		        <option value=""> Select... </option>
+		        <option value="createTeam"> Create Team </option>
+		        <option value="createSession"> Create Session </option>
+		        <option value="assignMember"> Assign Member To Team </option>
+		        <option value="addToFormation"> Add Player to Formation </option>
+		        <option value="updateStats"> Update Stats </option>
+		        <option value="showTeams"> Show Teams </option>
+		      </select>
+		    </label>
+
+		    <datalist id="playerPositions">
+		      <option value="Setter">
+		      <option value="Outside Hitter">
+		      <option value="Opposite Hitter">
+		      <option value="Middle Blocker">
+		      <option value="Libero">
+		      <option value="Defensive Specialist">
+		      <option value="Serving Specialist">
+		    </datalist>
+
+		    <!-- Create Team -->
+		    <div class="dropdown-content" data-value="createTeam">
+		      <form>
+		        <label>Location ID: <input type="text" name="teamLocationID"></label><br>
+		        <label>Gender: <input type="text" name="teamGender"></label><br>
+		        <label>Team Name: <input type="text" name="teamName"></label><br>
+		        <label>Coach ID: <input type="text" name="teamCoachID"></label><br>
+		        <label>League Level: <input type="text" name="teamLeagueLevel"></label><br>
+		        <input type="checkbox" name="teamIsActive"> Active<br>
+		        <input type="submit" value="Create Team">
+		      </form>
+		    </div>
+
+		    <!-- Create Session -->
+		    <div class="dropdown-content" data-value="createSession">
+		      <form>
+		        <label>Home Team ID: <input type="text" name="sessionHomeTeamID"></label><br>
+		        <label>Away Team ID: <input type="text" name="sessionAwayTeamID"></label><br>
+		        <label>Location ID: <input type="text" name="sessionLocationID"></label><br>
+		        <label>Start Time: <input type="datetime-local" name="sessionStartTime"></label><br>
+		        <label>End Time: <input type="datetime-local" name="sessionEndTime"></label><br>
+		        <label>Type (Training/Game): <input type="text" name="sessionType"></label><br>
+		        <label>Home Score: <input type="number" name="sessionHomeScore"></label><br>
+		        <label>Away Score: <input type="number" name="sessionAwayScore"></label><br>
+		        <input type="submit" value="Create Session">
+		      </form>
+		    </div>
+
+		    <!-- Assign Member To Team -->
+		    <div class="dropdown-content" data-value="assignMember">
+		      <form>
+		        <label>Member ID: <input type="text" name="assignMemberID"></label><br>
+		        <label>Team ID: <input type="text" name="assignTeamID"></label><br>
+		        <label>Season Year: <input type="text" name="assignSeasonYear"></label><br>
+		        <label>Start Date: <input type="date" name="assignStartDate"></label><br>
+		        <label>End Date: <input type="date" name="assignEndDate"></label><br>
+		        <label>Position: <input type="text" list="playerPositions" name="assignPosition"></label><br>
+		        <input type="submit" value="Assign Member">
+		      </form>
+		    </div>
+
+		    <!-- Add Player to Team Formation -->
+		    <div class="dropdown-content" data-value="addToFormation">
+		      <form>
+		        <label>Session ID: <input type="text" name="formationSessionID" required></label><br>
+		        <label>Member ID: <input type="text" name="formationMemberID" required></label><br>
+		        <label>Alternate Position: 
+		          <input type="text" list="playerPositions" name="formationPosition" placeholder="Leave blank for regular position">
+		        </label><br>
+		        <label>Start Time: <input type="datetime-local" name="formationStartTime"></label><br>
+		        <label>End Time: <input type="datetime-local" name="formationEndTime"></label><br>
+		        <input type="submit" value="Add to Formation">
+		      </form>
+		    </div>
+
+		    <!-- Update Stats -->
+		    <div class="dropdown-content" data-value="updateStats">
+		      <form>
+		        <label>Stat ID: <input type="text" name="statID"></label>
+		        <br>
+		        <label>Goals: <input type="number" name="statGoals"></label><br>
+		        <label>Assists: <input type="number" name="statAssists"></label><br>
+		        <label>Playtime (minutes): <input type="number" name="statPlaytime"></label><br>
+		        <label>Position: <input type="text" name="statPosition"></label><br>
+		        <label>Rating (0-10): <input type="number" step="0.01" name="statRating"></label><br>
+		        <label>Notes: <textarea name="statNotes"></textarea></label><br>
+		        <input type="submit" value="Update Stats">
+		      </form>
+		    </div>
+
+		    <!-- Show Teams -->
+		    <div class="dropdown-content" data-value="showTeams">
+          <form>
+            <input type="submit" value="Show All Teams">
+          </form>
+		    </div>
+		  </div>
+
+		  
+		  <div class="dropdown-box">
+		    <h2> Payments (Q7) </h2>
+		    <label>
+		      Action:
+		      <select name="paymentAction" class="dropdown-select">
+		        <option value=""> Select... </option>
+		        <option value="record"> Record Payment </option>
+		        <option value="show"> Show Payments </option>
+		      </select>
+		    </label>
+
+        <!-- Payments -->
+        <datalist id="paymentMethods">
+          <option value="Cash">
+          <option value="Debit">
+          <option value="Credit">
+          <option value="Cheque">
+          <option value="Other">
+        </datalist>
+
+		    <!-- Record Payment -->
+		    <div class="dropdown-content" data-value="record">
+		      <form>
+		        <label>Member ID: <input type="text" name="paymentMemberID"></label><br>
+		        <label>Membership Year: <input type="text" name="paymentYear"></label><br>
+		        <label>Payment Date: <input type="date" name="paymentDate"></label><br>
+		        <label>Amount: <input type="number" step="0.01" name="paymentAmount"></label><br>
+		        <label>Method (Cash/Debit/Credit/Cheque/Other): <input type="text" list="paymentMethods" name="paymentMethod"></label><br>
+		        <input type="submit" value="Record Payment">
+		      </form>
+		    </div>
+
+		    <!-- Show Payments -->
+		    <div class="dropdown-content" data-value="show">
+		      <br>
+          <form>
+            <label>Member ID: <input type="text" name="showPaymentMemberID"></label>
+            <input type="submit" value="Show Payments">
+          </form>
+		    </div>
+		  </div>
+		  
+      <!-- Dropdown box for q8 -->
+      <div class="dropdown-box">
+        <h2> Get Complete Location Details (Q8) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Click submit to view all location details </h4>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q9 -->
+      <div class="dropdown-box">
+        <h2> Associated Family Members (Q9) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Enter the ID of the family member you would like to view </h4>
+            <input type="text" name="familyMemberID">
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q10 -->
+      <div class="dropdown-box">
+        <h2> Team Formations (Q10) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Enter the details of the location and the start and end dates </h4>
+            <label>
+              Location ID
+              <input type="text" name="locationID">
+            </label>
+            <br/>
+            <label>
+              Start Date
+              <input type="date" name="startDate">
+            </label>
+            <br/>
+            <label>
+              End Date
+              <input type="date" name="endDate">
+            </label>
+            <br/>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q11 -->
+      <div class="dropdown-box">
+        <h2> Inactive Club Members (Q11) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Click submit to view all inactive Club Members who have been members for at least 2 years and who have been in two locations </h4>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q12 -->
+      <div class="dropdown-box">
+        <h2> Get Team Formation Report (Q12) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Enter a start and end date to view team formations for all locations </h4>
+            <label>
+              Start Date
+              <input type="date" name="startDate">
+            </label>
+            <br/>
+            <label>
+              End Date
+              <input type="date" name="endDate">
+            </label>
+            <br/>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q13 -->
+      <div class="dropdown-box">
+        <h2> Get Active Club Members who have not been assigned (Q13) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Click Submit to show all active Club Members who have not been assigned </h4>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q14 -->
+      <div class="dropdown-box">
+        <h2> Get all Major Club Members who joined as Minors (Q14) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Click Submit to show all Major Club Members who joined as Minors </h4>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q15 -->
+      <div class="dropdown-box">
+        <h2> Get Club Members who have always been Setters (Q15) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Click Submit to show all Club Members who have always been setters </h4>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q16 -->
+      <div class="dropdown-box">
+        <h2> Get Members who have been in every role (Q16) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Click Submit to get Active Members who have been in every role </h4>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q17 -->
+      <div class="dropdown-box">
+        <h2> Get Head Coaches who have Family Members at that location (Q17) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Choose a location, to view all Head Coaches who have Family Members at that location </h4>
+            <label>
+              Location Name
+              <input type="text" name="locationName">
+            </label>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q18 -->
+      <div class="dropdown-box">
+        <h2> Show undefeated players (Q18) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Click Submit to view all players who have not been defeated.  </h4>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Dropdown box for q19 -->
+      <div class="dropdown-box">
+        <h2> Show Volunteers who are a Family Member of a Minor (Q19) </h2>
+
+        <div class="dropdown-form">
+          <form>
+            <h4> Click Submit to show Volunteers who are a Family Member of a Minor Club Member </h4>
+            <input type="submit">
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
